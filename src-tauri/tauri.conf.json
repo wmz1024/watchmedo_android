@@ -1,0 +1,51 @@
+{
+  "productName": "Device Monitor",
+  "version": "1.0.0",
+  "identifier": "com.devicemonitor.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Device Monitor",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "android": {
+      "minSdkVersion": 24,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.PACKAGE_USAGE_STATS",
+        "android.permission.BATTERY_STATS",
+        "android.permission.WAKE_LOCK"
+      ]
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}

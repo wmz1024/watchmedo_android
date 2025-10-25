@@ -1,0 +1,27 @@
+[package]
+name = "device-monitor"
+version = "1.0.0"
+description = "Device Monitor App"
+authors = ["you"]
+edition = "2021"
+
+[lib]
+name = "device_monitor_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = [] }
+tauri-plugin-shell = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+sysinfo = "0.31"
+chrono = "0.4"
+parking_lot = "0.12"
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"
